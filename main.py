@@ -25,6 +25,7 @@ while running:
     screen.fill("black")
 
     pygame.draw.circle(screen, "green", player_pos, 40)
+    pygame.draw.rect(screen, "blue", rect_values, 1)
 
     keys = pygame.key.get_pressed()
     if keys[pygame.K_w]:
