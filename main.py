@@ -1,18 +1,21 @@
 # Example file showing a circle moving on screen
 import pygame
+from drawer import draw_grid
+import definitions
 
 # pygame setup
+
+renderer = definitions.Renderer()
+
+screen = renderer.screen
+
 pygame.init()
-screen = pygame.display.set_mode((1280, 720))
 clock = pygame.time.Clock()
 running = True
 dt = 0
 
 player_pos = pygame.Vector2(screen.get_width() / 2, screen.get_height() / 2)
 x, y = player_pos
-rect_values = (100, 100, 200, 150)
-
-pygame.draw.rect(screen, "blue", rect_values, 1)
 
 while running:
     # poll for events
@@ -25,7 +28,8 @@ while running:
     screen.fill("black")
 
     pygame.draw.circle(screen, "green", player_pos, 40)
-    pygame.draw.rect(screen, "blue", rect_values, 1)
+
+    draw_grid(screen)
 
     keys = pygame.key.get_pressed()
     if keys[pygame.K_w]:
