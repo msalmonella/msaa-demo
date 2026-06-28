@@ -19,17 +19,16 @@ x, y = player_pos
 
 while running:
     # poll for events
-    # pygame.QUIT event means the user clicked X to close your window
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
 
-    # fill the screen with a color to wipe away anything from last frame
     screen.fill("black")
 
-    pygame.draw.circle(screen, "green", player_pos, 40)
-
     draw_grid(screen)
+
+    pygame.draw.circle(screen, "green", player_pos, 20)
+
 
     keys = pygame.key.get_pressed()
     if keys[pygame.K_w]:
@@ -47,8 +46,6 @@ while running:
     pygame.display.flip()
 
     # limits FPS to 60
-    # dt is delta time in seconds since last frame, used for framerate-
-    # independent physics.
     dt = clock.tick(60) / 1000
 
 pygame.quit()
