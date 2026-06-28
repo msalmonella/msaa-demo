@@ -3,10 +3,10 @@ import pygame
 class Renderer:
     def __init__(
         self,
-        width: int = 1920,
-        height: int = 1080,
+        width: int = 1600,
+        height: int = 900,
         cell_size: int = 1,
-        screen = pygame.display.set_mode((1280, 720))
+        screen = pygame.display.set_mode((1600, 900))
     ):
         self.width = width
         self.height = height
